@@ -19,7 +19,7 @@ const bookingSchema = new mongoose.Schema({
     },
     date : {
         type: Date,
-        required: Date.now
+        default: Date.now
     },
 }, { timestamps: true });
 

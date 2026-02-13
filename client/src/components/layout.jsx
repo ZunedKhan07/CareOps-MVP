@@ -32,7 +32,7 @@ return (
       {/* Main Content */}
       <main className="flex-1 p-8">
         <header className="flex justify-between items-center mb-8">
-          <h1 className="text-2xl font-semibold text-gray-800 italic">Welcome back, Admin! 👋</h1>
+          <h1 className="text-2xl font-semibold text-gray-800 italic">Welcome back, Zuned Khan! 👋</h1>
           <div className="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">
             AD
           </div>

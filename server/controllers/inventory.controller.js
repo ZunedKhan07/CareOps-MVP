@@ -23,3 +23,28 @@ export const getInventory = asyncHandler(async (req, res) => {
         alerts: alerts
     });
 });
+
+export const createInventory = asyncHandler(async (req, res) => {
+    const { itemName, quantity, threshold } = req.body;
+
+    // Validation: Check karo sab fields hain ya nahi
+    if (!itemName || !quantity || !threshold) {
+        return res.status(400).json({ 
+            success: false, 
+            message: "All fields (Item Name, Quantity, Threshold) are required" 
+        });
+    }
+
+    // Database mein save karo
+    const newItem = await Inventory.create({
+        itemName,
+        quantity: Number(quantity),
+        threshold: Number(threshold)
+    });
+
+    res.status(201).json({
+        success: true,
+        message: "Item added successfully",
+        data: newItem
+    });
+});

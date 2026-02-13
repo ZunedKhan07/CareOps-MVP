@@ -4,7 +4,7 @@ import cors from "cors";
 const app = express();
 
 app.use(cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: "http://localhost:5173",
     credentials: true
 }))
 
@@ -14,6 +14,6 @@ app.use(express.static("public"))
 
 import apiRoutes from "./routes/api.route.js";
 
-app.use("api/v1", apiRoutes)
+app.use("/api/v1", apiRoutes)
 
 export {app}
